@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.five.mprj.product.map.ProductMapper">
+	<select id="productSelectList" resultType="co.five.mprj.product.service.ProductVO">
+		SELECT * FROM PRODUCT
+	</select>
+	
+	<select id="productSelect" resultType="co.five.mprj.product.service.ProductVO">
+		SELECT * FROM PRODUCT WHERE PRODUCT_NUM = #{productNum}
+	</select>
+	
+	<insert id="productInsert" parameterType="co.five.mprj.product.service.ProductVO">
+		<selectKey keyProperty="productNum" resultType="int" order="BEFORE">
+			SELECT 
+				CASE WHEN MAX(PRODUCT_NUM) IS NULL THEN 1 ELSE MAX(PRODUCT_NUM) + 1 END AS PRODUCTNUM
+			FROM PRODUCT
+		</selectKey>
+		INSERT INTO PRODUCT
+		VALUES(#{productNum},#{productName},#{productExpalin},#{productTrainer},#{productPrice},
+				,#{productSubject},#{productDate},#{productImgUrl},#{productThumbNailUrl},#{productCategory},#{productYoutubeUrl})
+	</insert>
+	
+	<update id="productUpdate" parameterType="co.five.mprj.product.service.ProductVO">
+			UPDATE PRODUCT
+			<set>
+			<if test=" != null"> = #{},</if>
+			</set>
+			WHERE PRODUCT_NUM = #{productNum}
+	</update>
+	
+	<delete id="productDelete" parameterType="co.five.mprj.product.service.ProductVO">
+		DELETE FROM PRODUCT WHERE PRODUCT_NUM = #{productNum}
+	</delete>
+
+</mapper>
+	
