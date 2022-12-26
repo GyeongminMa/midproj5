@@ -101,6 +101,9 @@
 						<div class="col-md-6 text-center mb-4">
 							<h2 class="heading-section">Shopping Cart</h2>
 						</div>
+						<div>
+							<button id='deleteAll'>선택삭제</button>
+						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
@@ -116,124 +119,6 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr class="alert" role="alert">
-											<!-- 1 체크박스 -->
-											<td><label class="checkbox-wrap checkbox-primary">
-													<input type="checkbox" checked> <span
-													class="checkmark"></span>
-											</label></td>
-											<!-- 2 상품 썸네일 -->
-											<td>
-												<div class="img"
-													style="background-image: url(images/cart/product-1.png);"></div>
-											</td>
-											<!-- 3 상품내용+한줄설명 -->
-											<td>
-												<div class="email">
-													<span>Sneakers Shoes 2020 For Men </span> <span>Fugiat
-														voluptates quasi nemo, ipsa perferendis</span>
-												</div>
-											</td>
-											<!-- 4 가격 -->
-											<td>$44.99</td>
-
-											<!-- 5 선택삭제 -->
-											<td>
-												<button type="button" class="close" data-dismiss="alert"
-													aria-label="Close">
-													<span aria-hidden="true"><i class="fa fa-close"></i></span>
-												</button>
-											</td>
-										</tr>
-										<tr class="alert" role="alert">
-											<!-- 체크박스 -->
-											<td><label class="checkbox-wrap checkbox-primary">
-													<input type="checkbox" checked> <span
-													class="checkmark"></span>
-											</label></td>
-											<!-- 상품 썸네일 -->
-											<td>
-												<div class="img"
-													style="background-image: url(images/cart/product-2.png);"></div>
-											</td>
-											<!-- 상품내용+한줄설명 -->
-											<td>
-												<div class="email">
-													<span>Sneakers Shoes 2020 For Men </span> <span>Fugiat
-														voluptates quasi nemo, ipsa perferendis</span>
-												</div>
-											</td>
-											<!-- 가격 -->
-											<td>$44.99</td>
-
-											<!-- 선택삭제 -->
-											<td>
-												<button type="button" class="close" data-dismiss="alert"
-													aria-label="Close">
-													<span aria-hidden="true"><i class="fa fa-close"></i></span>
-												</button>
-											</td>
-										</tr>
-										<tr class="alert" role="alert">
-											<!-- 체크박스 -->
-											<td><label class="checkbox-wrap checkbox-primary">
-													<input type="checkbox" checked> <span
-													class="checkmark"></span>
-											</label></td>
-											<!-- 상품 썸네일 -->
-											<td>
-												<div class="img"
-													style="background-image: url(images/cart/product-3.png);"></div>
-											</td>
-											<!-- 상품내용+한줄설명 -->
-											<td>
-												<div class="email">
-													<span>Sneakers Shoes 2020 For Men </span> <span>Fugiat
-														voluptates quasi nemo, ipsa perferendis</span>
-												</div>
-											</td>
-											<!-- 가격 -->
-											<td>$44.99</td>
-
-											<!-- 선택삭제 -->
-											<td>
-												<button type="button" class="close" data-dismiss="alert"
-													aria-label="Close">
-													<span aria-hidden="true"><i class="fa fa-close"></i></span>
-												</button>
-											</td>
-										</tr>
-										<tr class="alert" role="alert">
-											<!-- 체크박스 -->
-											<td><label class="checkbox-wrap checkbox-primary">
-													<input type="checkbox" checked> <span
-													class="checkmark"></span>
-											</label></td>
-											<!-- 상품 썸네일 -->
-											<td>
-												<div class="img"
-													style="background-image: url(images/cart/product-4.png);"></div>
-											</td>
-											<!-- 상품내용+한줄설명 -->
-											<td>
-												<div class="email">
-													<span>Sneakers Shoes 2020 For Men </span> <span>Fugiat
-														voluptates quasi nemo, ipsa perferendis</span>
-												</div>
-											</td>
-											<!-- 가격 -->
-											<td>$44.99</td>
-
-											<!-- 선택삭제 -->
-											<td>
-												<button type="button" class="close" data-dismiss="alert"
-													aria-label="Close">
-													<span aria-hidden="true"><i class="fa fa-close"></i></span>
-												</button>
-											</td>
-										</tr>
-
-
 									</tbody>
 								</table>
 							</div>

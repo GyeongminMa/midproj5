@@ -4,16 +4,10 @@
 	<!-- 장바구니 전체조회 -->
 	<select id="cartSelectList"
 		resultType="co.five.mprj.cart.service.CartVO">
-		SELECT p.PRODUCT_THUMBNAIL_URL,
-		p.PRODUCT_NAME,
-		p.PRODUCT_EXPLAIN,
-		p.PRODUCT_PRICE,
-		c.MEMBER_ID,
-		c.CART_NUM,
-		p.PRODUCT_NUM
-		FROM PRODUCT p JOIN CART c
-		ON p.PRODUCT_NUM = c.PRODUCT_NUM
-		WHERE c.MEMBER_ID = #{memberId}
+		SELECT C.CART_NUM, C.MEMBER_ID, P.PRODUCT_NUM, P.PRODUCT_THUMBNAIL_URL, P.PRODUCT_NAME, P.PRODUCT_EXPLAIN, P.PRODUCT_PRICE
+		FROM PRODUCT P JOIN CART C 
+		ON P.PRODUCT_NUM = C.PRODUCT_NUM
+		WHERE C.MEMBER_ID=#{memberId}
 	</select>
 
 	<!-- 장바구니에 등록 -->
@@ -22,15 +16,13 @@
 		<selectKey keyProperty="CartNum" resultType="int"
 			order="BEFORE">
 			SELECT
-			CASE WHEN MAX(CART_NUM) IS NULL 
-			THEN 1 ELSE MAX(CART_NUM) + 1 
+			CASE WHEN MAX(CART_NUM) IS NULL
+			THEN 1 ELSE MAX(CART_NUM) + 1
 			END AS CARTNUM
 			FROM CART
 		</selectKey>
 		INSERT INTO CART
-		VALUES(#{cartNum}, #{productNum},
-		#{productName},#{productPrice},
-		#{productDate}, #{productThumbnailUrl}, #{memberId})
+		VALUES(#{cartNum}, #{productNum}, #{memberId})
 	</insert>
 
 	<!-- 장바구니 삭제 -->

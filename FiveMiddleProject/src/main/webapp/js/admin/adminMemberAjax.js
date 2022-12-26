@@ -111,8 +111,7 @@ function delMembers() {
 }
 //▼ 회원삭제 처리(자바연결)
 function removeFetch(memberId) {
-    console.log("리무브패치까지 왔음")
-    fetch('adminDel.do', {
+    fetch('ajaxAdminDel.do', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'

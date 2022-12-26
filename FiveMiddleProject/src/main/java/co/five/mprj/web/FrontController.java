@@ -42,7 +42,7 @@ public class FrontController extends HttpServlet {
 		// ▶ 메인화면
 		map.put("/main.do", new MainCommand()); // 처음 실행하는 페이지
 
-		// ▶ 회원가입 (지은)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		// ▶ 회원가입 (지은)
 		map.put("/memberJoinForm.do", new MemberJoinForm()); // 회원가입 폼
 		map.put("/AjaxMemberIdCheck.do", new AjaxMemberIdCheck()); // 회원아이디 중복확인
 		map.put("/AjaxMemberNickCheck.do", new AjaxMemberNickCheck()); // 회원닉네임 중복확인
@@ -70,8 +70,7 @@ public class FrontController extends HttpServlet {
 		map.put("/ajaxCartList.do", new AjaxCartList()); // (ajax)장바구니 전체출력
 		map.put("/ajaxCartInsert.do", new AjaxCartInsert()); // (ajax)장바구니 담기
 		map.put("/ajaxCartDelete.do", new AjaxCartDelete()); // (ajax)장바구니 삭제
-		//채은 
-
+	
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
