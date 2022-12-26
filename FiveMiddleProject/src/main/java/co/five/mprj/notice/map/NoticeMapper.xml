@@ -3,7 +3,7 @@
 <mapper namespace="co.five.mprj.notice.map.NoticeMapper">
 	<!-- 공지글 전체조회 -->
 	<select id="noticeSelectList" resultType="co.five.mprj.notice.service.NoticeVO">
-		SELECT * FROM NOTICE ORDER BY NOTICE_ID DESC
+		SELECT * FROM NOTICE ORDER BY NOTICE_NUM DESC
 	</select>
 	
 	<!-- 공지글 단건조회 -->
