@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.five.mprj.orders.map.OrdersMapper">
+
+	<!-- 전체조회 -->
+	<select id="ordersSelectList"
+		resultType="co.five.mprj.orders.service.OrdersVO">
+		SELECT * FROM ORDERS ORDER BY ORDERS_ID DESC
+	</select>
+
+	<!-- 입력 -->
+	<insert id="ordersInsert"
+		parameterType="co.five.mprj.orders.service.OrdersVO">
+		<selectKey keyProperty="ordersNum" resultType="int"
+			order="BEFORE">
+			SELECT
+			CASE WHEN MAX(ORDERS_NUM) IS NULL THEN 1 ELSE
+			MAX(ORDERS_NUM) +
+			1 END AS
+			ORDERS_NUM
+			FROM ORDERS
+		</selectKey>
+		INSERT INTO ORDERS
+		VALUES(#{ordersNum}, #{ordersDate},
+		#{ordersStatus},
+		#{productNum}, #{productName},
+		#{productPrice}, #{productThumbnailUrl})
+	</insert>
+
+</mapper>
