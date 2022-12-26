@@ -16,20 +16,20 @@
 			FROM REVIEW
 		</selectKey>
 		INSERT INTO REVIEW
-		VALUES(#{reviewNum},#{reviewWriter},#{reviewSubject},#{reviewStar},#{reviewFileUrl},
-				,#{productName},#{reviewHit})
+		VALUES(#{reviewNum},#{reviewWriter},#{reviewSubject})
 	</insert>
 	
 	<update id="reviewUpdate" parameterType="co.five.mprj.review.service.ReviewVO">
 			UPDATE REVIEW
 			<set>
-			<if test=" != null"> = #{},</if>
+			<if test="reviewWriter != null">REVIEW_WRITER = #{reviewWriter},</if>
+			<if test="reviewSubject != null">REVIEW_SUBJECT = #{reviewSubject},</if>
 			</set>
 			WHERE REVIEW_NUM = #{reviewNum}
 	</update>
 	
 	<delete id="reviewDelete" parameterType="co.five.mprj.review.service.ReviewVO">
-		DELETE FROM REVIEW WHERE PRODUCT_NUM = #{ReviewNum}
+		DELETE FROM REVIEW WHERE REVIEW_NUM = #{reviewNum}
 	</delete>
 
 </mapper>

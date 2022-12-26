@@ -27,7 +27,15 @@ import co.five.mprj.member.command.MemberJoinForm;
 import co.five.mprj.member.command.MemberLogin;
 import co.five.mprj.member.command.MemberLoginForm;
 import co.five.mprj.member.command.MemberLogout;
+import co.five.mprj.orders.command.Orderlist;
 import co.five.mprj.product.command.AjaxProductList;
+import co.five.mprj.product.command.ProductAllList;
+import co.five.mprj.review.command.ReviewDelete;
+import co.five.mprj.review.command.ReviewEditForm;
+import co.five.mprj.review.command.ReviewInsert;
+import co.five.mprj.review.command.ReviewList;
+import co.five.mprj.review.command.ReviewSelect;
+import co.five.mprj.review.command.ReviewUpdate;
 
 //@WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -55,7 +63,7 @@ public class FrontController extends HttpServlet {
 
 		// ▶ 관리자 페이지
 		// ▷ 강의관리(지은)
-		map.put("/AjaxproductList.do", new AjaxProductList());// 강의 리스트
+		//map.put("/AjaxproductList.do", new AjaxProductList());// 강의 리스트
 		// map.put("/AjaxProduct.do", new AjaxProduct());// Ajax
 		// map.put("/ProductInsert.do", new productInsert()); //강의 추가
 
@@ -72,6 +80,20 @@ public class FrontController extends HttpServlet {
 		map.put("/ajaxCartDelete.do", new AjaxCartDelete()); // (ajax)장바구니 삭제
 		//채은 
 
+		
+		//상품조회 ▷(경민)
+		map.put("/prodListAjax.do", new ProductAllList()); //강좌전체
+		
+		//리뷰 ▷(경민)
+		map.put("/reviewList.do", new ReviewList()); //리뷰리스트
+		map.put("/reviewInsert.do", new ReviewInsert());//리뷰등록
+		map.put("/reviewDelete.do", new ReviewDelete());//리뷰삭제
+		map.put("/reviewUpdate.do", new ReviewUpdate());//리뷰수정
+		map.put("/reviewEditForm.do", new ReviewEditForm());//수정폼
+		map.put("/reviewSelect.do", new ReviewSelect());//선택
+		//결제 ▷(경민)
+		map.put("/orderlist.do", new Orderlist());
+		
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
