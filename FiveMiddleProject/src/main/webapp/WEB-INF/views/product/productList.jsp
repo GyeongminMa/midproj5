@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,7 @@
 
 </head>
 <body>
-	
+	<br><br><br><br><br><br><br><br>
 	<!-- Product -->
 	<div class="bg0 m-t-23 p-b-140">
 		<div class="container">
@@ -29,7 +30,7 @@
 					</button>
 
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".bag">
-						근력향상
+						스트레칭
 					</button>
 
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".shoes">
@@ -45,6 +46,7 @@
 
 				
 <div class="row isotope-grid">
+				<c:forEach items="${products }" var="p">
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 					<!-- Block2 -->
 					<div class="block2">
@@ -55,14 +57,13 @@
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-								
-									${products[0].productName}
+									${p.productName }
 								</a>
 								<span class="stext-105 cl3">
-									${products[0].productExplain}
+									${p.productExplain}
 								</span>
 								<span class="stext-105 cl3">
-									${products[0].productPrice }
+									&#8361;${p.productPrice }
 								</span>
 							</div>
 
@@ -70,63 +71,10 @@
 
 					</div>
 				</div>
+					</c:forEach>
 			</div>
 			
-			<div class="row isotope-grid">
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<!-- Block2 -->
-					<div class="block2">
-						<div class="block2-pic hov-img0">
-							<img src="images/product-01.jpg" alt="IMG-PRODUCT">
-						</div>
-					
-						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-								
-									${products[0].productName}
-								</a>
-								<span class="stext-105 cl3">
-									${products[0].productExplain}
-								</span>
-								<span class="stext-105 cl3">
-									${products[0].productPrice }
-								</span>
-							</div>
-
-						</div>
-
-					</div>
-				</div>
-			</div>
 			
-			<div class="row isotope-grid">
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<!-- Block2 -->
-					<div class="block2">
-						<div class="block2-pic hov-img0">
-							<img src="images/product-01.jpg" alt="IMG-PRODUCT">
-						</div>
-					
-						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-								
-									${products[0].productName}
-								</a>
-								<span class="stext-105 cl3">
-									${products[0].productExplain}
-								</span>
-								<span class="stext-105 cl3">
-									${products[0].productPrice }
-								</span>
-							</div>
-
-						</div>
-
-					</div>
-				</div>
-			</div>
 
 		</div>
 	</div>

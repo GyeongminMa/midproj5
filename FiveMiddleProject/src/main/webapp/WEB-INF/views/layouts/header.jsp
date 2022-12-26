@@ -19,13 +19,14 @@
 					<ul class="main-menu">
 
 
-						<li><a href="product.html">상품목록</a></li>
+						<li><a href="prodListAjax.do">상품목록</a></li>
 
-						<li><a href="blog.html">수강후기</a></li>
+						<li><a href="reviewList.do">수강후기</a></li>
 
 						<li><a href="blog.html">공지사항</a></li>
 
 						<li><a href="about.html">FAQ</a></li>
+						<li><a href="orderlist.do">order</a></li>
 
 						<li><a href="memberJoinForm.do">내강의실</a></li>
 						<c:if test="${memberRole eq 'ADMIN' }">
