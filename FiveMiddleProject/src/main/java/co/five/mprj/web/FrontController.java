@@ -1,6 +1,7 @@
 package co.five.mprj.web;
 
 import java.io.IOException;
+
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -14,7 +15,10 @@ import co.five.mprj.MainCommand;
 import co.five.mprj.admin.command.AjaxAdminDel;
 import co.five.mprj.admin.command.AdminMemberList;
 import co.five.mprj.admin.command.AjaxAdminMemberList;
+import co.five.mprj.admin.command.AjaxAdminProductDelete;
 import co.five.mprj.admin.command.AdminOrdersList;
+import co.five.mprj.admin.command.AdminProductInsertForm;
+import co.five.mprj.admin.command.AdminProductList;
 import co.five.mprj.cart.command.AjaxCartDelete;
 import co.five.mprj.cart.command.AjaxCartInsert;
 import co.five.mprj.cart.command.AjaxCartList;
@@ -27,7 +31,6 @@ import co.five.mprj.member.command.MemberJoinForm;
 import co.five.mprj.member.command.MemberLogin;
 import co.five.mprj.member.command.MemberLoginForm;
 import co.five.mprj.member.command.MemberLogout;
-import co.five.mprj.product.command.AjaxProductList;
 
 //@WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -42,7 +45,7 @@ public class FrontController extends HttpServlet {
 		// ▶ 메인화면
 		map.put("/main.do", new MainCommand()); // 처음 실행하는 페이지
 
-		// ▶ 회원가입 (지은)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		// ▶ 회원가입 (지은)
 		map.put("/memberJoinForm.do", new MemberJoinForm()); // 회원가입 폼
 		map.put("/AjaxMemberIdCheck.do", new AjaxMemberIdCheck()); // 회원아이디 중복확인
 		map.put("/AjaxMemberNickCheck.do", new AjaxMemberNickCheck()); // 회원닉네임 중복확인
@@ -55,10 +58,11 @@ public class FrontController extends HttpServlet {
 
 		// ▶ 관리자 페이지
 		// ▷ 강의관리(지은)
-		map.put("/AjaxproductList.do", new AjaxProductList());// 강의 리스트
-		// map.put("/AjaxProduct.do", new AjaxProduct());// Ajax
-		// map.put("/ProductInsert.do", new productInsert()); //강의 추가
-
+		map.put("/adminProductList.do", new AdminProductList()); // 강의 리스트
+		map.put("/adminProductInsertForm.do", new AdminProductInsertForm()); //강의 등록폼 호출
+//		map.put("/adminProductInsert.do", new AdminProductInsert()); //강의 등록 - 미완성
+		map.put("/adminProductDelete", new AjaxAdminProductDelete()); //강의 삭제
+		
 		// ▷ 회원관리(채은)
 		map.put("/adminMemberList.do", new AdminMemberList()); // 회원관리 jsp 호출
 		map.put("/ajaxAdminMemberList.do", new AjaxAdminMemberList()); // (ajax)회원 전체출력
@@ -70,7 +74,7 @@ public class FrontController extends HttpServlet {
 		map.put("/ajaxCartList.do", new AjaxCartList()); // (ajax)장바구니 전체출력
 		map.put("/ajaxCartInsert.do", new AjaxCartInsert()); // (ajax)장바구니 담기
 		map.put("/ajaxCartDelete.do", new AjaxCartDelete()); // (ajax)장바구니 삭제
-		//채은 
+		// 채은
 
 	}
 

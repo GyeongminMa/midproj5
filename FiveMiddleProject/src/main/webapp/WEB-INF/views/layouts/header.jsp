@@ -32,13 +32,13 @@
 							<li><a href="adminMemberList.do">관리자페이지</a>
 							<ul class="sub-menu">
 								<c:if test="${memberRole eq 'ADMIN' }">
-									<li><a href="AjaxproductList.do">강의 관리</a></li>
+									<li><a href="adminProductList.do">강의 관리</a></li>
 								</c:if>
 								<c:if test="${memberRole eq 'ADMIN' }">
 								<li><a href="adminMemberList.do">회원 관리</a></li>
 								</c:if>
 								<c:if test="${memberRole eq 'ADMIN' }">
-								<li><a href="memberLogout.do">게시판 관리</a></li>
+								<li><a href="">게시판 관리</a></li>
 									</c:if>
 							</ul>
 							</li>
