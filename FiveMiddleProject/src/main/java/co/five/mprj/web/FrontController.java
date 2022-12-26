@@ -70,6 +70,7 @@ public class FrontController extends HttpServlet {
 		map.put("/ajaxCartList.do", new AjaxCartList()); // (ajax)장바구니 전체출력
 		map.put("/ajaxCartInsert.do", new AjaxCartInsert()); // (ajax)장바구니 담기
 		map.put("/ajaxCartDelete.do", new AjaxCartDelete()); // (ajax)장바구니 삭제
+		//채은 
 
 	}
 
