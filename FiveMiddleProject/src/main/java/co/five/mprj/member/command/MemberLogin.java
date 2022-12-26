@@ -48,6 +48,7 @@ public class MemberLogin implements Command {
 			// 세션으로 계속 가지고 갈 정보들
 			session.setAttribute("memberId", vo.getMemberId());
 			session.setAttribute("memberRole", vo.getMemberRole());
+			
 
 //			message = vo.getMemberName() + "님 환영합니다.";
 //			request.setAttribute("message", message);

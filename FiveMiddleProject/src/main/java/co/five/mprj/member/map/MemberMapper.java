@@ -10,6 +10,7 @@ public interface MemberMapper {
 	int memberInsert(MemberVO vo); //입력
 	int memberDelete(MemberVO vo); //삭제
 	int memberUpdate(MemberVO vo); //수정
+	MemberVO memberSelectShow(String memberId); // 한 회원 조회, 마이페이지
 	
 	boolean isIdCheck(String id); //아이디 중복확인 (아이디 존재하면 0, 존재하지않으면 1)
 	boolean isNickname(String nickname); // 닉네임 중복확인 (닉네임 존재하면 0, 존재하지않으면 1)

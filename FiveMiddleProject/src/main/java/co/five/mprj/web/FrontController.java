@@ -22,11 +22,20 @@ import co.five.mprj.cart.command.CartMain;
 import co.five.mprj.common.Command;
 import co.five.mprj.member.command.AjaxMemberIdCheck;
 import co.five.mprj.member.command.AjaxMemberNickCheck;
+import co.five.mprj.member.command.MemberEditForm;
 import co.five.mprj.member.command.MemberJoin;
 import co.five.mprj.member.command.MemberJoinForm;
 import co.five.mprj.member.command.MemberLogin;
 import co.five.mprj.member.command.MemberLoginForm;
 import co.five.mprj.member.command.MemberLogout;
+import co.five.mprj.member.command.MemberSelect;
+import co.five.mprj.member.command.MemberUpdate;
+import co.five.mprj.member.command.Mypage;
+import co.five.mprj.notice.command.Notice;
+import co.five.mprj.notice.command.NoticeInsert;
+import co.five.mprj.notice.command.NoticeList;
+import co.five.mprj.notice.command.NoticeSelect;
+import co.five.mprj.notice.command.NoticeInsertForm;
 import co.five.mprj.product.command.AjaxProductList;
 
 //@WebServlet("*.do")
@@ -71,6 +80,19 @@ public class FrontController extends HttpServlet {
 		map.put("/ajaxCartInsert.do", new AjaxCartInsert()); // (ajax)장바구니 담기
 		map.put("/ajaxCartDelete.do", new AjaxCartDelete()); // (ajax)장바구니 삭제
 		//채은 
+		
+		// ▶ 공지사항 (정은)
+		map.put("/notice.do", new Notice()); // 공지게시판 기본화면
+		map.put("/noticeList.do", new NoticeList()); // 공지게시판에 공지글 데이터를 넘겨줌
+		map.put("/noticeInsertForm.do", new NoticeInsertForm()); // 공지글 작성 폼
+		map.put("/noticeSelect.do", new NoticeSelect()); // 공지글 상세조회
+		map.put("/noticeInsert.do", new NoticeInsert()); // 공지게시판 글쓰기 데이터 전달
+		
+		// ▶ 마이페이지 (정은)
+		map.put("/myPage.do", new Mypage()); // 마이페이지(헤더에서 누르면 연결되는 곳)
+		map.put("/memberEditForm.do", new MemberEditForm()); // 회원 정보 수정 폼 (비밀번호 확인)
+		map.put("/memberSelect.do", new MemberSelect()); // 회원 정보 단건 조회
+		map.put("/memberUpdate.do", new MemberUpdate()); // 회원 정보 수정
 
 	}
 

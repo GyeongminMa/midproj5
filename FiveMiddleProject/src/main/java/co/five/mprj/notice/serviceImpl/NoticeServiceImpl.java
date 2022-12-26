@@ -23,7 +23,7 @@ public class NoticeServiceImpl implements NoticeService {
 	// 공지글 단건 조회
 	@Override
 	public NoticeVO noticeSelect(NoticeVO vo) {
-		return noticeSelect(vo);
+		return map.noticeSelect(vo);
 	}
 
 	// 공지글 저장

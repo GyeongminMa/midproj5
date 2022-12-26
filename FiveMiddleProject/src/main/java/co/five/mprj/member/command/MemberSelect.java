@@ -1,6 +1,7 @@
 package co.five.mprj.member.command;
 
 import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -13,13 +14,13 @@ public class MemberSelect implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = request.getSession();
 		MemberService service = new MemberServiceImpl();
 		MemberVO vo = new MemberVO();
-		HttpSession session = request.getSession();
 		
 		
-		vo.setMemberId(request.getParameter("여긴 이전 페이지에서 클릭할때 가져오는 변수 자리"));
-		vo = service.memberSelect(vo);
+		vo.setMemberId(request.getParameter("memberId"));
+		vo = service.memberSelectShow("memberId");
 		request.setAttribute("member", vo);
 		
 		return "member/memberEditForm.tiles";

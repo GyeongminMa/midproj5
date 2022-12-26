@@ -2,6 +2,7 @@ package co.five.mprj.member.serviceImpl;
 
 import java.util.List;
 
+
 import org.apache.ibatis.session.SqlSession;
 
 import co.five.mprj.common.DataSource;
@@ -47,6 +48,11 @@ MemberMapper map = sqlSession.getMapper(MemberMapper.class);
 	@Override
 	public boolean isNickname(String nickname) {
 		return map.isNickname(nickname);
+	}
+
+	@Override
+	public MemberVO memberSelectShow(String memberId) {
+		return map.memberSelectShow(memberId);
 	}
 
 }

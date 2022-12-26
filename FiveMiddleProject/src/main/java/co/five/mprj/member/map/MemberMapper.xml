@@ -16,6 +16,15 @@
 			AND MEMBER_PASSWORD = #{memberPassword}
 		</if>
 	</select>
+	
+	<!-- 한 회원 조회 / 회원정보수정 -->
+	<select id="memberSelectShow"
+		resultType="co.five.mprj.member.service.MemberVO">
+		SELECT * FROM MEMBER
+		WHERE MEMBER_ID = #{memberId}
+	</select>
+	
+	
 
 	<!-- 회원 가입 -->
 	<insert id="memberInsert"

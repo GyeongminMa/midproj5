@@ -1,6 +1,7 @@
 package co.five.mprj.member.command;
 
 import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -17,7 +18,27 @@ public class MemberEditForm implements Command {
 		
 		HttpSession session = request.getSession();
 		
-		MemberVO vo = (MemberVO) session.getAttribute("member");
+		MemberService service = new MemberServiceImpl();
+		
+		MemberVO vo = new MemberVO();
+		
+		String memberId = (String) session.getAttribute("memberId");
+		
+//		vo = service.memberSelectShow(vo);
+		
+//		request.setAttribute("member", vo);
+		
+		vo = service.memberSelectShow(memberId);
+		
+		
+		
+		
+//		HttpSession session = request.getSession();
+//		
+//		MemberVO vo = (MemberVO) session.getAttribute("member");
+		
+		
+		System.out.println(vo);
 		
 //		System.out.println(vo.getMemberId());
 //		System.out.println(vo.getMemberRole());

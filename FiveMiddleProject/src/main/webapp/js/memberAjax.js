@@ -3,14 +3,15 @@
  */
 
 // 회원정보수정 페이지 출력
-function EditForm() {
-    fetch('memberEditForm.do')
-    .then((result) => result.json())
-    .then((data) => {
-        console.log(data)
-    })
-    .catch(err => console.log(err))
-}
+// function EditForm() {
+//     fetch('memberEditForm.do')
+//     .then((result) => result.json())
+//     .then((data) => {
+//         console.log(data)
+//     })
+//     .catch(err => console.log(err))
+// }
+
 
 
 
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', init);
 
 function init() {
     // 데이터 수정
-    document.querySelector('form[id=frm]').addEventListener('submit', updateMember);
+    document.querySelector('form[id=memberFrm]').addEventListener('submit', updateMember);
 }
 
 function updateMember(e) {
@@ -41,6 +42,8 @@ function updateMember(e) {
     .then(result => result.json())
     .then(result => {
         console.log(result)
+        alert("회원정보가 수정되었습니다.")
+
         // document.getElementById('memberPassword').replaceWith(result.memberPassword);
         document.getElementById('memberNickname').replaceWith(result.memberNickname);
     })

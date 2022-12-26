@@ -23,7 +23,7 @@
 
 						<li><a href="blog.html">수강후기</a></li>
 
-						<li><a href="blog.html">공지사항</a></li>
+						<li><a href="notice.do">공지사항</a></li>
 
 						<li><a href="about.html">FAQ</a></li>
 
@@ -54,6 +54,9 @@
 								</c:if>
 								<c:if test="${empty memberId }">
 								<li><a href="memberLoginForm.do">로그인</a></li>
+								</c:if>
+								<c:if test="${not empty memberId }">
+								<li><a href="memberEditForm.do">마이페이지</a></li>
 								</c:if>
 								<c:if test="${not empty memberId }">
 								<li><a href="memberLogout.do">로그아웃</a></li>
